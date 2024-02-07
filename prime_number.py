@@ -70,3 +70,16 @@ def eratos(n):
 print(eratos(100))
 print(eratos(200))
 # 여기도 살짝 추가
+
+# 골든머시기의 추측
+# 2인가 4인가 이상의 짝수는 2개의 소수의 합으로 이루어져 있다. (10^16 까지 증명이 됐다고 함)
+def gold(n):
+    a = eratos(n)
+    b=[]
+    for i in range(len(a)):
+        for j in range(len(a)):
+            if a[i] + a[j] == n:
+                b.append([a[i], a[j]])
+    return b
+
+print(gold(100))
