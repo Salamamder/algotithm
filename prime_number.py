@@ -70,3 +70,5 @@ def eratos(n):
 print(eratos(100))
 print(eratos(200))
 # 여기도 살짝 추가
+
+# 골드바흐의 추측
