@@ -78,3 +78,63 @@ print(swapping(n, arr))
 
 # 틀렸네;;;
 # 문제원인 확인해야함 ㅠ
+
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+arr = [list(input()) for _ in range(n)]
+
+# 전체적으로 터지는게 있는지 확인하는 코드를 def로 만들어놓자
+# 스왑때리는 함수 필요하자나
+def checkandswapping(n, arr):
+    answer = check(n, arr)
+    imsi = 0
+    for i in range(n-1):
+        for j in range(n-1):
+            #바꾸고 확인하고 돌려야함
+            # 바꾸기(아래버전)
+            if i+1 < n and arr[i][j] != arr[i+1][j]:
+                arr[i][j], arr[i+1][j] = arr[i+1][j], arr[i][j]
+                #체크하기
+                imsi = check(n, arr)
+                answer = max(answer ,imsi)
+                # 돌리기
+                arr[i][j], arr[i+1][j] = arr[i+1][j], arr[i][j]
+                
+            # 바꾸기(우측버전)
+            if j+1 < n and arr[i][j] != arr[i][j+1]:
+                arr[i][j], arr[i][j+1] = arr[i][j+1], arr[i][j]
+                #체크하기
+                imsi = check(n, arr)
+                answer = max(answer ,imsi)
+                # 돌리기
+                arr[i][j], arr[i][j+1] = arr[i][j+1], arr[i][j]
+    return answer
+
+# 체크하는 함수
+def check(n, arr):
+    answer = 1
+    for i in range(n):
+        for j in range(n):
+            count=1
+            # 아래로 확인
+            while True:
+                if i!=n-1 and arr[i][j] == arr[i+1][j]:
+                    count += 1
+                    i += 1
+                elif i==n-1 or arr[i][j] != arr[i+1][j]:
+                    if answer < count:
+                        answer = count
+                    break
+            # 우측으로 확인b
+            while True:
+                if j!=n-1 and arr[i][j] == arr[i][j+1]:
+                    count += 1
+                    j += 1
+                elif  j==n-1 or arr[i][j] != arr[i][j+1]:
+                    if answer < count:
+                        answer = count
+                    break
+    return answer
+print(checkandswapping(n, arr))
