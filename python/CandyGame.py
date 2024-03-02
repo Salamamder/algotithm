@@ -123,18 +123,16 @@ def check(n, arr):
                 if i!=n-1 and arr[i][j] == arr[i+1][j]:
                     count += 1
                     i += 1
-                elif i==n-1 or arr[i][j] != arr[i+1][j]:
-                    if answer < count:
-                        answer = count
+                    max(answer, count)
+                else:
                     break
             # 우측으로 확인b
             while True:
                 if j!=n-1 and arr[i][j] == arr[i][j+1]:
                     count += 1
                     j += 1
-                elif  j==n-1 or arr[i][j] != arr[i][j+1]:
-                    if answer < count:
-                        answer = count
+                    max(answer, count)
+                else:
                     break
     return answer
 print(checkandswapping(n, arr))
