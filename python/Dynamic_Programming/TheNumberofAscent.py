@@ -36,4 +36,6 @@ else:
             d[i] = sum(d[0:i+1])
     print(sum(d)%10007) 
 
+
+# 문제 해결 완료
             
