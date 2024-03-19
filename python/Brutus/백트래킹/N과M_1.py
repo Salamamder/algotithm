@@ -75,7 +75,7 @@ def dfs(n, lst):
     for j in range(1, N+1):
         if chk[j] == False: # 선택하지 않은 하수일 경우
             chk[j] = True
-            dfs(n+1, lst+[j])
+            dfs(n+1, lst+[j]) # 
             chk[j]=False   # 다녀와서는 비활성화 처리를 해줘야 한다.
 
 dfs(0,[])

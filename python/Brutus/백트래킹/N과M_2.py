@@ -15,7 +15,7 @@ def dfs(n, lst, s):
         return
     
     for j in range(s, N+1):
-        dfs(n+1, lst+[j], j+1)
+        dfs(n+1, lst+[j], j+1) # 다 지역함수 처리돼서 굳이 append랑 pop을 쓸 필요를 없앤 코드 -> 대박
     return ans
 
 ans = dfs(0, [], 1)
