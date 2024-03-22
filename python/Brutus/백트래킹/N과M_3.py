@@ -7,7 +7,7 @@ ans = []
 N, M = map(int, input().split())
 
 def dfs(n, lst):
-    if n == M:
+    if n == M:1
         ans.append(lst)
         return
     
