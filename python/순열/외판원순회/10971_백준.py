@@ -17,7 +17,7 @@ def dfs(lst, now):
             answer = min(answer, sum(lst) + arr[now][0])
         return
         
-    for i in range(n):
+    for i in range(1, n):# 여기서 1부터 시작하는 이유는  시작점은 0을 받아서 시작하도록 했고 for i in range에서 i는 도착위치였음 그러니 도착은 0을 제외한 곳에서 나와야 해서
         if chk[i] == False and arr[now][i]:
             
             chk[i] = True
