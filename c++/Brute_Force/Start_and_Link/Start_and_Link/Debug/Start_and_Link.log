@@ -1,0 +1,4 @@
+﻿  Source.cpp
+D:\study\algotithm\c++\Brute_Force\Start_and_Link\Start_and_Link\Source.cpp(24,19): warning C4018: '>': signed/unsigned mismatch
+D:\study\algotithm\c++\Brute_Force\Start_and_Link\Start_and_Link\Source.cpp(25,20): warning C4018: '>': signed/unsigned mismatch
+  Start_and_Link.vcxproj -> D:\study\algotithm\c++\Brute_Force\Start_and_Link\Debug\Start_and_Link.exe
