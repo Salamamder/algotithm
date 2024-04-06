@@ -6,22 +6,16 @@ input = sys.stdin.readline
 
 n = list(map(int, input().split()))
 arr = list(input().split())
-check = [False] * n[1]
 arr.sort()
 answer = []
 
-def finder(lst):
+def finder(a, b, lst):
     if len(lst) == n[0]:
-        lst.sort()
-        if lst not in answer:
-            answer.append(lst)
+        if 0 < ('a' in lst) + ('e' in lst) + ('i' in lst) + ('o' in lst) + ('u' in lst) <= (n[0]-2):
+            print("".join(lst))
         return
     
-    for i in range(len(lst), n[1]):
-        if check[i] == False and 1 <= (('a' in lst) + ('e' in lst) + ('i' in lst) + ('o' in lst) + ('u' in lst)) <= (n[0]-2):
-            check[i] = True
-            finder(lst + [arr[i]])
-            check[i] = False
-finder([])
-for lst in answer:
-    print(*lst)
+    for i in range(a, n[1]-n[0]+1+b):
+        finder(i+1, b+1, lst + [arr[i]])
+        
+finder(0, 0, [])

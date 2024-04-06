@@ -13,7 +13,7 @@ def finder(a, answer):
         return
     
     for i in range(a, n):        
-        finder(len(answer), lst)
+        finder(len(answer), lst3215)
 
 
 # --------------------------------------------------
